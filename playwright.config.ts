@@ -9,7 +9,7 @@ export default defineConfig({
     baseURL: 'https://www.saucedemo.com/', // Base URL for all tests
     storageState: 'storageState.json', // Path to storage state file
     //testIdAttribute: 'data-testid', // Use data-testid attribute for selectors
-    testIdAttribute: 'data-test', // Use data-test attribute for selectors
+    //testIdAttribute: 'data-test', // Use data-test attribute for selectors
     headless: true,   // Run tests in headless mode
     browserName: 'chromium', // Default browser to use
     viewport: { width: 1280, height: 720 }, // Default viewport size
