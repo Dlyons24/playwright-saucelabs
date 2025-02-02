@@ -2,9 +2,6 @@ import {test,expect} from '@playwright/test';
 import { FullConfig } from '@playwright/test';
 //import { before } from 'node:test';
 
-//test.beforeEach(async ({ page }) => {
- ////   await page.goto("/inventory.html");
-//});
 
 test("Add one item to the cart", async ({ page }) => {
     await page.goto('https://www.saucedemo.com/inventory.html');
@@ -16,8 +13,6 @@ test("Add one item to the cart", async ({ page }) => {
     await page.locator('[data-test="login-button"]').click();
 
     await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
-    //await page.getByText("Sauce Labs Backpack").click();
-    //await page.getByRole("button", { name: "add-to-cart" }).click();
     const shoppingCartBadge = await page.locator('[data-test="shopping-cart-badge"]');
     await expect(shoppingCartBadge).toBeVisible();
     await expect(shoppingCartBadge).toHaveText('1');
@@ -38,12 +33,6 @@ test("Add one item to the cart", async ({ page }) => {
     await expect(thankYouBadge).toBeVisible();
     await expect(thankYouBadge).toHaveText('Thank you for your order!');
     await page.locator('[data-test="back-to-products"]').click();
-
-
-
-
-
-
 
 });
 
